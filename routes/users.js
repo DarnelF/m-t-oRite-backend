@@ -1,9 +1,11 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+const googleAPI = process.env.Google_API;
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+/* GEt google API */
+router.get("/googleAPI", (req, res) => {
+  console.log(googleAPI);
+  res.json({ API: googleAPI });
 });
 
 module.exports = router;
